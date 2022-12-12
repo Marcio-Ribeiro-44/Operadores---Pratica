@@ -1,8 +1,18 @@
 const prompt = require('prompt-sync')();
 
-let nome = prompt(`Digite seu nome: `);
-let salarioBruto = parseFloat(prompt(`Digite seu salário bruto: `));
-let impostoDeRenda = salarioBruto * 0.10;
-let salarioLiquido = salarioBruto - impostoDeRenda;
-
-console.log(`Salário Líquido: R$ ${salarioLiquido}`);
+nome = prompt(`Digite o seu nome: `);
+salarioBruto = parseFloat(prompt(`Informe o salário bruto: `));
+faixa1 = salarioBruto > 0 && salarioBruto <= 1903.98;
+faixa2 = salarioBruto <= 2826.65;
+faixa3 = salarioBruto >= 2826.66;
+ir = salarioBruto * 0.075;
+ir = salarioBruto * 0.15;
+if (faixa1) {
+  var ir = salarioBruto * 0.05;
+} else if (faixa2) {
+  var ir = salarioBruto * 0.075
+} else {
+  var ir = salarioBruto * 0.15
+}
+salarioLiquido = salarioBruto - ir
+console.log(`${nome} receberá o salário líquido de R$ ${salarioLiquido}`);
