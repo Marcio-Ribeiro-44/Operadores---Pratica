@@ -5,6 +5,12 @@ for (let i = 1; i <= 5; i++) {
   nome = prompt(`Digite o seu nome: `);
   salarioBruto = parseFloat(prompt(`Informe o salário bruto: `));
   dependentes = parseInt(prompt(`Digite o número de dependentes: `))
+
+  for (let j = 1; j <= dependentes; j++) {
+    let ganhoMensal = parseFloat(prompt(`Informe o ganho mensal: `));
+    salarioBruto += ganhoMensal
+  }
+
   renda_percapita = salarioBruto / (dependentes + 1)
   faixa1 = salarioBruto > 0 && salarioBruto <= 1903.98;
   faixa2 = salarioBruto <= 2826.65;
